@@ -1,30 +1,36 @@
-// ¿Recuerdas qué hace iostream?
 #include <iostream>
+using namespace std;
 
-// ¿Por qué este include usa comillas y no < >?
-#include "utilerias.h"
-
-// ¿por qué debe existir la función main()?
 int main() {
-    // 1. Constante: cantidad de números a leer
-    const int CANTIDAD = 5;
+    int numero;
+    int pares[5];
+    int totalPares = 0;
+    int contador = 0;
+    int cantidad = 5;
 
-    // 2. Arreglo y contador (siempre inicializados)
-    //    TODO: declara el arreglo pares. ¿De qué tamaño en el peor caso?
-    //    TODO: declara totalPares. ¿Con qué valor empieza?
+    // Mientras contador < cantidad
+    while (contador < cantidad) {
 
-    std::cout << "Guardar los numeros pares de " << CANTIDAD << " numeros\n";
+        // Pedir número
+        cout << "Ingresar numero: ";
+        cin >> numero;
 
-    // 3. Ciclo: leer CANTIDAD números
-    //    TODO: lee cada número con leerEntero("Escribe un numero: ")
-    //    TODO: si el número es par, guárdalo en la siguiente posición libre
-    //    ¿Qué variable te dice cuál es la siguiente posición libre?
+        // Si el número es par
+        if (numero % 2 == 0) {
+            pares[totalPares] = numero;
+            totalPares = totalPares + 1;
+        }
 
-    // 4. Salida
-    //    TODO: muestra cuántos pares se guardaron
-    //    TODO: recorre el arreglo e imprime cada par
-    //    ¿Hasta qué posición debes llegar?
+        contador = contador + 1;
+    }
 
-    // ¿Qué significa return 0;?
+    // Mostrar los números pares
+    int i = 0;
+
+    while (i < totalPares) {
+        cout << pares[i] << endl;
+        i = i + 1;
+    }
+
     return 0;
 }
